@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.kathukyabrian</groupId>
-  <artifactId>mpesa</artifactId>
-  <name>mpesa</name>
-  <version>1.0.2</version>
-  <description>easily integrate mpesa payments in your application.</description>
+  <artifactId>airtel</artifactId>
+  <name>airtel</name>
+  <version>1.0.0</version>
+  <description>easily integrate airtel payments in your application.</description>
   <url>http://www.example.com</url>
   <developers>
     <developer>
@@ -23,9 +23,9 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:git://github.com/kathukyabrian/lipa-mpesa.git</connection>
-    <developerConnection>scm:git:ssh://github.com:kathukyabrian/lipa-mpesa.git</developerConnection>
-    <url>http://github.com/kathukyabrian/lipa-mpesa/tree/master</url>
+    <connection>scm:git:git://github.com/kathukyabrian/airtel-money.git</connection>
+    <developerConnection>scm:git:ssh://github.com:kathukyabrian/airtel-money.git</developerConnection>
+    <url>http://github.com/kathukyabrian/airtel-money/tree/master</url>
   </scm>
   <build>
     <resources>
@@ -41,6 +41,13 @@
         <configuration>
           <source>21</source>
           <source>21</source>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
       <plugin>
@@ -76,7 +83,7 @@
       <plugin>
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>0.7.0</version>
+        <version>0.11.0</version>
         <extensions>true</extensions>
         <configuration>
           <publishingServerId>central</publishingServerId>
@@ -125,7 +132,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.36</version>
+      <version>1.18.46</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -184,6 +191,7 @@
   </distributionManagement>
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
+    <lombok.version>1.18.46</lombok.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <log4j.version>2.24.3</log4j.version>
     <jackson.version>2.18.2</jackson.version>
