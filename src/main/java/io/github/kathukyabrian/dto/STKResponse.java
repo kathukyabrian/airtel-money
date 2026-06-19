@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class STKResponse {
-    private String reference;
+    private String referenceId;
     private String responseCode;
     private String responseDescription;
     private boolean success;
