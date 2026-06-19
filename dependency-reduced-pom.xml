@@ -4,7 +4,7 @@
   <groupId>io.github.kathukyabrian</groupId>
   <artifactId>airtel</artifactId>
   <name>airtel</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>easily integrate airtel payments in your application.</description>
   <url>http://www.example.com</url>
   <developers>
@@ -126,6 +126,21 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>12.2.2</version>
+        <configuration>
+          <nvdApiKey>2ae6dca2-c6f2-48e5-8338-a54d51e226f7</nvdApiKey>
+          <failBuildOnCVSS>7</failBuildOnCVSS>
+          <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
+          <ossIndexAnalyzerEnabled>false</ossIndexAnalyzerEnabled>
+          <nodeAnalyzerEnabled>false</nodeAnalyzerEnabled>
+          <nodeAuditAnalyzerEnabled>false</nodeAuditAnalyzerEnabled>
+          <bundleAuditAnalyzerEnabled>false</bundleAuditAnalyzerEnabled>
+          <yarnAuditAnalyzerEnabled>false</yarnAuditAnalyzerEnabled>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
@@ -193,7 +208,7 @@
     <maven.compiler.release>17</maven.compiler.release>
     <lombok.version>1.18.46</lombok.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <log4j.version>2.24.3</log4j.version>
-    <jackson.version>2.18.2</jackson.version>
+    <log4j.version>2.26.0</log4j.version>
+    <jackson.version>2.22.0</jackson.version>
   </properties>
 </project>
