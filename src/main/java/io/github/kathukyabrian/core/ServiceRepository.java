@@ -15,7 +15,7 @@ public class ServiceRepository implements Runnable {
 
     public void init(ApplicationProperties applicationProperties) {
         this.applicationProperties = applicationProperties;
-        this.thread = new Thread(this, "mpesa");
+        this.thread = new Thread(this, "airtel");
     }
 
     public void init() {
@@ -25,7 +25,7 @@ public class ServiceRepository implements Runnable {
             ApplicationProperties applicationProperties = ConfigUtil.getProperties(properties);
             ConfigUtil.validateProperties(applicationProperties);
             this.applicationProperties = applicationProperties;
-            this.thread = new Thread(this, "mpesa");
+            this.thread = new Thread(this, "airtel");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
