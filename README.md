@@ -33,7 +33,7 @@ Latest Version: 1.0.1
 
 ## Quick Start
 ### Configuration
-- Create a file called `mpesa.properties`
+- Create a file called `airtel.properties`
 - Place the file on the application's classpath
 ```properties
 country=KE
@@ -46,18 +46,18 @@ query-url=https://api.safaricom.co.ke/mpesa/transactionstatus/v1/query
 ```
 
 ### Properties Description
-| Property      | Description                                                                                                                  |
-|---------------|------------------------------------------------------------------------------------------------------------------------------|
-| country       | Country code i.e KE                                                                                                          |
-| currency      | Currency code i.e KES                                                                                                        |
-| callback-url  | The URL that will receive the callback upon payment completion.                                                              |
-| client-id     | Credentials provided by Airtel to authenticate the application.                                                              |
-| client-secret | Credentials provided by Airtel to authenticate the application.                                                              |
-| auth-url      | The url provided by Daraja to be used to authenticate the application. Expects the __consumer key__ and __consumer secret__. |
-| payment-url   | The url provided by Daraja to  be used to initiate USSD push request                                                         |
-| query-url     | The url provided by Daraja to be used to query transaction status                                                            |
+| Property      | Description                                                                                                             |
+|---------------|-------------------------------------------------------------------------------------------------------------------------|
+| country       | Country code i.e KE                                                                                                     |
+| currency      | Currency code i.e KES                                                                                                   |
+| callback-url  | The URL that will receive the callback upon payment completion.                                                         |
+| client-id     | Credentials provided by Airtel to authenticate the application.                                                         |
+| client-secret | Credentials provided by Airtel to authenticate the application.                                                         |
+| auth-url      | The url provided by Airtel to be used to authenticate the application. Expects the __client id__ and __client secret__. |
+| payment-url   | The url provided by Airtel to  be used to initiate USSD push request                                                    |
+| query-url     | The url provided by Airtel to be used to query transaction status                                                       |
 
-## Create Mpesa Config
+## Create Airtel Config
 ```java
 package x.com.config;
 import io.github.kathukyabrian.core.ServiceRepository;
@@ -98,7 +98,7 @@ AirtelSTKResponse response = Airtel.requestPayment(1,"2547xxxxxxxx", "payment de
 ```
 
 #### Callback
-- in your callback endpoint, use the __handleResult(MpesaResult mpesaResult)__ method to handle your callback
+- in your callback endpoint, use the __handleResult(AirtelSTKResult stkResult)__ method to handle your callback
 
 ```java
 import io.github.kathukyabrian.core.Airtel;
