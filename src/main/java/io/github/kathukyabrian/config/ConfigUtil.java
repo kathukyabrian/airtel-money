@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class ConfigUtil {
     public static Properties readConfig() throws Exception {
-        String fileName = System.getenv().get(ServiceConstants.AIRTEL_CONFIG_ENV_VARIABLE);
+        String fileName = getConfigFileName();
 
         Properties properties = new Properties();
         if (fileName != null) {
@@ -66,5 +66,10 @@ public class ConfigUtil {
         if (reason != null) {
             throw new ConfigurationException(reason + " cannot be null or empty");
         }
+    }
+
+
+    public static String getConfigFileName() {
+        return System.getenv(ServiceConstants.AIRTEL_CONFIG_ENV_VARIABLE);
     }
 }
